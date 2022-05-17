@@ -23,13 +23,13 @@ Los pasos 2 y 3 se deben ejecutar mientras que el root tenga paquetes por valida
 Desplazate a la carpeta donde tienes almacenado el proyecto en la terminal, y luego ejecuta el siguiente comando dependiendo de tu plataforma
 
 En windows
-$ docker run -d -it --name mpi -v ${pwd}/target:/app augustosalazar/un_mpi_image:v4 $
+`docker run -d -it --name mpi -v ${pwd}/target:/app augustosalazar/un_mpi_image:v4`
 
 En linux
-$ docker run -d -it --name mpi -v "$(pwd)"/target:/app augustosalazar/un_mpi_image:v4 $
+`docker run -d -it --name mpi -v "$(pwd)"/target:/app augustosalazar/un_mpi_image:v4`
 
 # Ejecución
 
-$ docker exec -it mpi mpiexec  --oversubscribe --allow-run-as-root -n <trabajdores> python /app/primerCheckerG7.py <k> $
+`docker exec -it mpi mpiexec  --oversubscribe --allow-run-as-root -n <trabajdores> python /app/primerCheckerG7.py <k>`
 
 **Debes reemplazar <trabajadores> con el número de trabajdores que deseas y <k> con el número hasta el cual deseas buscar primos**
